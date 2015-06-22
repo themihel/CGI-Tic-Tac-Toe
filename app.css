@@ -1,0 +1,164 @@
+body,
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  font-family: Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+.hidden {
+  width: 0px;
+  height: 0px;
+  display: none;
+  visibility: hidden;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clear {
+  clear: both;
+  width: 0px;
+  height: 0px;
+}
+
+.ic {
+  width: 650px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #123456;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+header h1 {
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+}
+
+#gamefield .ic {
+  background-color: #123456;
+}
+
+#gamefield .ic .row {
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+#gamefield .ic .row:last-child {
+  margin-bottom: 0px;
+}
+
+#gamefield .ic .row .field {
+  display: inline-block;
+  background-color: whitesmoke;
+  color: whitesmoke;
+  width: 200px;
+  height: 200px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+#gamefield .ic .row .field:last-child {
+  margin-right: 0px;
+}
+
+#gamefield .ic .row .field.win svg .svg_path {
+  fill: #4daf50;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: #123456;
+  padding: 20px;
+  text-align: center;
+}
+
+footer h1 {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+}
+
+footer h1 #restart {
+  cursor: pointer;
+  height: 36px;
+  width: 36px;
+  display: inline-block;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+footer h1 #restart .svg_restart {
+  fill: whitesmoke;
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+}
+
+footer h1 #restart.animate {
+  -webkit-animation-name: restartAnimation;
+  animation-name: restartAnimation;
+  -webkit-animation-duration: 4s;
+  animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes restartAnimation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes restartAnimation {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.svg_path {
+  fill: #123456;
+}
+
+.svg_path.inactive {
+  fill-opacity: 0.1;
+}

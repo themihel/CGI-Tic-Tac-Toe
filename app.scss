@@ -1,0 +1,154 @@
+// Variables
+$color-background-main: #F5F5F5;
+$color-background-highlight: #123456;
+$color-svg-win: #4DAF50;
+
+// General
+body, html {
+	box-sizing: border-box;
+	background-color: $color-background-main;
+	font-family: Tahoma, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.hidden {
+	width: 0px;
+	height: 0px;
+	display: none;
+	visibility: hidden;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+	width: 0px;
+	height: 0px;
+}
+
+// Inner container
+.ic {
+	width: 650px;
+	margin: 0 auto;
+
+	
+}
+
+// Toolbar
+header {
+	background-color: $color-background-highlight;
+	padding: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+
+	h1 {
+		padding: 0;
+		margin: 0;
+		color: $color-background-main;
+	}
+}
+
+// Gamefield
+#gamefield {
+	.ic {
+		background-color: $color-background-highlight;
+
+		.row {
+			height: 200px;
+			margin-bottom: 20px;
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+
+			.field {
+				display: inline-block;
+				background-color: $color-background-main;
+				color: $color-background-main;
+				width: 200px;
+				height: 200px;
+				margin-right: 20px;
+				cursor: pointer;
+
+				&:last-child {
+					margin-right: 0px;
+				}
+
+				&.win {
+					svg {
+						.svg_path {
+							fill: $color-svg-win;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Footer
+footer {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: $color-background-highlight;
+	padding: 20px;
+	text-align: center;
+
+	h1 {
+		display: inline-block;
+		padding: 0;
+		margin: 0;
+		color: $color-background-main;
+
+		#restart {
+			cursor: pointer;
+			height: 36px;
+			width: 36px;
+			display: inline-block;
+			transform-origin: 50% 50%;
+
+			.svg_restart {
+				fill: $color-background-main;
+				transform-origin: 50% 50%;
+			}
+
+			&.animate {
+				animation-name: restartAnimation;
+				animation-duration: 4s;
+				animation-iteration-count: infinite;
+			}
+		}
+		
+	}
+
+}
+
+@keyframes restartAnimation {
+  	0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+// SVG
+.svg_path {
+	fill: $color-background-highlight;
+
+	&.inactive {
+		fill-opacity: 0.1;
+	}
+}
